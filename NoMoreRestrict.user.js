@@ -1,16 +1,17 @@
 // ==UserScript==
-// @namespace         https://github.com/WCY-dt
 // @name              🚫NoMoreRestrict🚫
 // @name:en           🚫NoMoreRestrict🚫
 // @name:zh-CN        🚫限制你妹🚫
 // @description       Get rid of the annoying restrictions on websites， including right-click, text selection, copy, drag, save, etc.
 // @description:en    Get rid of the annoying restrictions on websites， including right-click, text selection, copy, drag, save, etc.
 // @description:zh-CN 摆脱网站上各种沙壁限制，包括右键、文本选择、复制、拖动、保存等
-// @version           1.0.0
+// @version           1.0.1
+// @namespace         https://github.com/WCY-dt
 // @homepageURL       https://github.com/WCY-dt/NoMoreRestrict
 // @supportURL        https://github.com/WCY-dt/NoMoreRestrict/issues/new?assignees=WCY-dt&labels=help+wanted
-// @updateURL         https://raw.githubusercontent.com/WCY-dt/NoMoreRestrict/main/NoMoreRestrict.user.js
-// @downloadURL       https://raw.githubusercontent.com/WCY-dt/NoMoreRestrict/main/NoMoreRestrict.user.js
+// @bugreportURL      https://github.com/WCY-dt/NoMoreRestrict/issues/new?assignees=WCY-dt&labels=bug
+// @updateURL         https://update.greasyfork.org/scripts/498848/%F0%9F%9A%ABNoMoreRestrict%F0%9F%9A%AB.user.js
+// @downloadURL       https://update.greasyfork.org/scripts/498848/%F0%9F%9A%ABNoMoreRestrict%F0%9F%9A%AB.user.js
 // @author            Ch3nyang
 // @copyright         2024, Ch3nyang
 // @license           MIT
