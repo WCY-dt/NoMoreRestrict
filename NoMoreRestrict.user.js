@@ -9,6 +9,8 @@
 // @version           1.0.0
 // @homepageURL       https://github.com/WCY-dt/NoMoreRestrict
 // @supportURL        https://github.com/WCY-dt/NoMoreRestrict/issues/new?assignees=WCY-dt&labels=help+wanted
+// @updateURL         https://raw.githubusercontent.com/WCY-dt/NoMoreRestrict/main/NoMoreRestrict.user.js
+// @downloadURL       https://raw.githubusercontent.com/WCY-dt/NoMoreRestrict/main/NoMoreRestrict.user.js
 // @author            Ch3nyang
 // @copyright         2024, Ch3nyang
 // @license           MIT
