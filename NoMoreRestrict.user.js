@@ -5,7 +5,7 @@
 // @description       Get rid of the annoying restrictions on websites， including right-click, text selection, copy, drag, save, etc.
 // @description:en    Get rid of the annoying restrictions on websites， including right-click, text selection, copy, drag, save, etc.
 // @description:zh-CN 摆脱网站上各种沙壁限制，包括右键、文本选择、复制、拖动、保存等
-// @version           1.0.1
+// @version           1.1.0
 // @namespace         https://github.com/WCY-dt
 // @homepageURL       https://github.com/WCY-dt/NoMoreRestrict
 // @supportURL        https://github.com/WCY-dt/NoMoreRestrict/issues/new?assignees=WCY-dt&labels=help+wanted
@@ -62,6 +62,8 @@ const $ = window.jQuery.noConflict(true);
         case 'wenku.baidu.com':
             handleSiteBaiduwenku();
             break;
+        case 'c.pc.qq.com':
+            handleSiteQq();
         default:
             break;
     }
@@ -103,4 +105,16 @@ function handleSiteBaiduwenku() {
             showAllButton.click();
         }
     }, 3000); // Wait for 3000 milliseconds (3 seconds) before executing the code inside setTimeout
+}
+
+function handleSiteQq() {
+    // If find pfurl, go to the real page
+    const pfurl = new URLSearchParams(window.location.search).get('pfurl');
+    if (pfurl) {
+        // URL decode
+        const url = decodeURIComponent(pfurl);
+        window
+            .open(url, '_self')
+            .focus();
+    }
 }

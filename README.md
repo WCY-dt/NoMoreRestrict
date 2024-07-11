@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This is a simple plugin that removes all the restrictions of web pages, including right-click, text selection, copy, drag, save, etc.
+This is a simple plugin that removes all the restrictions of web pages, including right-click, text selection, copy, drag, save, page jump prompt, etc.
 
 ## Installation
 
