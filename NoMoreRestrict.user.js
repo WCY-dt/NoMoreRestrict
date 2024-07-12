@@ -2,10 +2,10 @@
 // @name              🚫NoMoreRestrict🚫
 // @name:en           🚫NoMoreRestrict🚫
 // @name:zh-CN        🚫限制你妹🚫
-// @description       Get rid of the annoying restrictions on websites， including right-click, text selection, copy, drag, save, etc.
-// @description:en    Get rid of the annoying restrictions on websites， including right-click, text selection, copy, drag, save, etc.
-// @description:zh-CN 摆脱网站上各种沙壁限制，包括右键、文本选择、复制、拖动、保存等
-// @version           1.1.1
+// @description       Get rid of the annoying restrictions on websites， including right-click, text selection, copy, save, etc.
+// @description:en    Get rid of the annoying restrictions on websites， including right-click, text selection, copy, save, etc.
+// @description:zh-CN 摆脱网站上各种沙壁限制，包括右键、文本选择、复制、保存等
+// @version           1.2.0
 // @namespace         https://github.com/WCY-dt
 // @homepageURL       https://github.com/WCY-dt/NoMoreRestrict
 // @supportURL        https://github.com/WCY-dt/NoMoreRestrict/issues/new?assignees=WCY-dt&labels=help+wanted
@@ -41,9 +41,11 @@ const $ = window.jQuery.noConflict(true);
     document.head.appendChild(style);
 
     // Block the restriction of drag
+    /*
     document.addEventListener('dragstart', function (event) {
         event.stopPropagation();
     }, true);
+    */
 
     // Block the restriction of save
     document.addEventListener('contextmenu', function (event) {
