@@ -5,13 +5,10 @@
 // @description       Get rid of the annoying restrictions on websites， including right-click, text selection, copy, drag, save, etc.
 // @description:en    Get rid of the annoying restrictions on websites， including right-click, text selection, copy, drag, save, etc.
 // @description:zh-CN 摆脱网站上各种沙壁限制，包括右键、文本选择、复制、拖动、保存等
-// @version           1.1.0
+// @version           1.1.1
 // @namespace         https://github.com/WCY-dt
 // @homepageURL       https://github.com/WCY-dt/NoMoreRestrict
 // @supportURL        https://github.com/WCY-dt/NoMoreRestrict/issues/new?assignees=WCY-dt&labels=help+wanted
-// @bugreportURL      https://github.com/WCY-dt/NoMoreRestrict/issues/new?assignees=WCY-dt&labels=bug
-// @updateURL         https://update.greasyfork.org/scripts/498848/%F0%9F%9A%ABNoMoreRestrict%F0%9F%9A%AB.user.js
-// @downloadURL       https://update.greasyfork.org/scripts/498848/%F0%9F%9A%ABNoMoreRestrict%F0%9F%9A%AB.user.js
 // @author            Ch3nyang
 // @copyright         2024, Ch3nyang
 // @license           MIT
@@ -19,6 +16,8 @@
 // @icon              data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEzLDlIMTguNUwxMywzLjVWOU02LDJIMTRMMjAsOFYyMEEyLDIgMCAwLDEgMTgsMjJINkM0Ljg5LDIyIDQsMjEuMSA0LDIwVjRDNCwyLjg5IDQuODksMiA2LDJNMTAuNSwxMUM4LDExIDYsMTMgNiwxNS41QzYsMTggOCwyMCAxMC41LDIwQzEzLDIwIDE1LDE4IDE1LDE1LjVDMTUsMTMgMTMsMTEgMTAuNSwxMU0xMC41LDEyLjVBMywzIDAgMCwxIDEzLjUsMTUuNUMxMy41LDE2LjA2IDEzLjM1LDE2LjU4IDEzLjA4LDE3TDksMTIuOTJDOS40MiwxMi42NSA5Ljk0LDEyLjUgMTAuNSwxMi41TTcuNSwxNS41QzcuNSwxNC45NCA3LjY1LDE0LjQyIDcuOTIsMTRMMTIsMTguMDhDMTEuNTgsMTguMzUgMTEuMDYsMTguNSAxMC41LDE4LjVBMywzIDAgMCwxIDcuNSwxNS41WiIgZmlsbD0iI2NjMDAwMCIgLz48L3N2Zz4=
 // @require           https://code.jquery.com/jquery-3.7.1.min.js
 // @grant             GM_addStyle
+// @downloadURL https://update.greasyfork.org/scripts/498848/%F0%9F%9A%ABNoMoreRestrict%F0%9F%9A%AB.user.js
+// @updateURL https://update.greasyfork.org/scripts/498848/%F0%9F%9A%ABNoMoreRestrict%F0%9F%9A%AB.meta.js
 // ==/UserScript==
 
 const $ = window.jQuery.noConflict(true);
@@ -38,8 +37,7 @@ const $ = window.jQuery.noConflict(true);
 
     // Block the restriction of select
     const style = document.createElement('style');
-    style.type = 'text/css';
-    style.innerHTML = '* { user-select: auto !important; }';
+    style.innerHTML = '* { -webkit-user-select: auto !important; user-select: auto !important; }';
     document.head.appendChild(style);
 
     // Block the restriction of drag
@@ -64,6 +62,7 @@ const $ = window.jQuery.noConflict(true);
             break;
         case 'c.pc.qq.com':
             handleSiteQq();
+            break;
         default:
             break;
     }
