@@ -2,6 +2,8 @@
 
 [English](./README.md) | 简体中文
 
+![installs](https://img.shields.io/greasyfork/dt/498848) ![rating](https://img.shields.io/greasyfork/rating-count/498848) ![version](https://img.shields.io/greasyfork/v/498848)
+
 ## 介绍
 
 这是一个简单的插件，可以解除网页的所有限制，包括右键、文本选择、复制、保存、跳转提示等。

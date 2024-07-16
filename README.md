@@ -2,6 +2,8 @@
 
 [简体中文](./README.zh-CN.md) | English
 
+![installs](https://img.shields.io/greasyfork/dt/498848) ![rating](https://img.shields.io/greasyfork/rating-count/498848) ![version](https://img.shields.io/greasyfork/v/498848)
+
 ## Introduction
 
 This is a simple plugin that removes all the restrictions of web pages, including right-click, text selection, copy, save, page jump prompt, etc.
