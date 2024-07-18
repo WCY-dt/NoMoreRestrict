@@ -30,6 +30,8 @@ Then you can install this script from [Greasy Fork](https://update.greasyfork.or
 - 2024-07-16
   - Add settings page
   - Add setting to not disable right click on video websites
+- 2024-07-18
+  - Fix conflicts with directory functions of some websites
 
 ## Contribution
 

@@ -5,7 +5,7 @@
 // @description       Get rid of the annoying restrictions on websites， including right-click, text selection, copy, save, etc.
 // @description:en    Get rid of the annoying restrictions on websites， including right-click, text selection, copy, save, etc.
 // @description:zh-CN 摆脱网站上各种沙壁限制，包括右键、文本选择、复制、保存等
-// @version           1.3.0
+// @version           1.3.1
 // @namespace         https://github.com/WCY-dt
 // @homepageURL       https://github.com/WCY-dt/NoMoreRestrict
 // @supportURL        https://github.com/WCY-dt/NoMoreRestrict/issues/new?assignees=WCY-dt&labels=help+wanted
@@ -28,7 +28,7 @@ const $ = window.jQuery.noConflict(true);
 /* Settings begin */
 const settingsHtml = /*html*/ `
     <div id="no-more-restrict-settings" style="display: none;">
-        <h3 id="no-more-restrict-settings-title">NoMoreRestrict Settings / 设置</h3>
+        <div id="no-more-restrict-settings-title">NoMoreRestrict Settings / 设置</div>
         <button id="no-more-restrict-close-btn">X</button>
         <input type="checkbox" id="no-more-restrict-disable-video-right-click">
         <label for="no-more-restrict-disable-video-right-click">Disable video sites from modifying the right-click menu / 禁用视频网站对右键菜单的修改</label>
