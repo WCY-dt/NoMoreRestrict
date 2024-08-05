@@ -32,6 +32,8 @@ Then you can install this script from [Greasy Fork](https://update.greasyfork.or
   - Add setting to not disable right click on video websites
 - 2024-07-18
   - Fix conflicts with directory functions of some websites
+- 2024-08-05
+  - Fix text cannot be selected on 16map.com
 
 ## Contribution
 

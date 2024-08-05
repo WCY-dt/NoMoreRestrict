@@ -5,7 +5,7 @@
 // @description       Get rid of the annoying restrictions on websites， including right-click, text selection, copy, save, etc.
 // @description:en    Get rid of the annoying restrictions on websites， including right-click, text selection, copy, save, etc.
 // @description:zh-CN 摆脱网站上各种沙壁限制，包括右键、文本选择、复制、保存等
-// @version           1.3.1
+// @version           1.3.2
 // @namespace         https://github.com/WCY-dt
 // @homepageURL       https://github.com/WCY-dt/NoMoreRestrict
 // @supportURL        https://github.com/WCY-dt/NoMoreRestrict/issues/new?assignees=WCY-dt&labels=help+wanted
@@ -119,7 +119,7 @@ const menuToggleSettings = GM_registerMenuCommand('Toggle Settings', () => {
 
     // Block the restriction of select
     const style = document.createElement('style');
-    style.innerHTML = '* { -webkit-user-select: auto !important; user-select: auto !important; }';
+    style.innerHTML = '* { -webkit-user-select: auto !important; -moz-user-select: auto !important; -ms-user-select: auto !important; user-select: auto !important; }';
     document.head.appendChild(style);
 
     // Block the restriction of drag
@@ -146,6 +146,9 @@ const menuToggleSettings = GM_registerMenuCommand('Toggle Settings', () => {
             break;
         case 'c.pc.qq.com':
             handleSiteQq();
+            break;
+        case '16map.com':
+            handleSite16map();
             break;
         default:
             break;
@@ -200,4 +203,11 @@ function handleSiteQq() {
             .open(url, '_self')
             .focus();
     }
+}
+
+function handleSite16map() {
+    // Block the restriction of select
+    const style = document.createElement('style');
+    style.innerHTML = 'body * :not(input):not(textarea) { -webkit-user-select: auto !important; -moz-user-select: auto !important; -ms-user-select: auto !important; user-select: auto !important; }';
+    document.head.appendChild(style);
 }
