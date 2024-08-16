@@ -34,6 +34,8 @@ Then you can install this script from [Greasy Fork](https://update.greasyfork.or
   - Fix conflicts with directory functions of some websites
 - 2024-08-05
   - Fix text cannot be selected on 16map.com
+- 2024-08-16
+  - Fix right-click restrictions on alist.11zhang.com
 
 ## Contribution
 

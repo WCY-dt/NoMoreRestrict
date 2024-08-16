@@ -5,7 +5,7 @@
 // @description       Get rid of the annoying restrictions on websites， including right-click, text selection, copy, save, etc.
 // @description:en    Get rid of the annoying restrictions on websites， including right-click, text selection, copy, save, etc.
 // @description:zh-CN 摆脱网站上各种沙壁限制，包括右键、文本选择、复制、保存等
-// @version           1.3.2
+// @version           1.3.3
 // @namespace         https://github.com/WCY-dt
 // @homepageURL       https://github.com/WCY-dt/NoMoreRestrict
 // @supportURL        https://github.com/WCY-dt/NoMoreRestrict/issues/new?assignees=WCY-dt&labels=help+wanted
@@ -34,7 +34,7 @@ const settingsHtml = /*html*/ `
         <label for="no-more-restrict-disable-video-right-click">Disable video sites from modifying the right-click menu / 禁用视频网站对右键菜单的修改</label>
     </div>
     <style>
-        #no-more-restrict-settings {
+        * #no-more-restrict-settings {
             position: fixed;
             top: 50%;
             left: 50%;
@@ -45,22 +45,22 @@ const settingsHtml = /*html*/ `
             z-index: 9999;
         }
 
-        #no-more-restrict-settings input[type="checkbox"] {
+        * #no-more-restrict-settings input[type="checkbox"] {
             margin-right: 10px;
         }
 
-        #no-more-restrict-settings label {
+        * #no-more-restrict-settings label {
             font-size: 16px;
         }
 
-        #no-more-restrict-settings-title {
+        * #no-more-restrict-settings-title {
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 10px;
             margin-right: 20px;
         }
 
-        #no-more-restrict-close-btn {
+        * #no-more-restrict-close-btn {
             font-size: 20px;
             font-family: Arial, sans-serif;
             cursor: pointer;
@@ -100,6 +100,19 @@ const menuToggleSettings = GM_registerMenuCommand('Toggle Settings', () => {
 });
 /* Settings end */
 
+const siteRightClickExclude = [
+    'alist.11zhang.com',
+];
+
+const siteCopyExclude = [
+];
+
+const siteSelectExclude = [
+];
+
+const siteSaveExclude = [
+];
+
 (function () {
     'use strict';
 
@@ -107,31 +120,34 @@ const menuToggleSettings = GM_registerMenuCommand('Toggle Settings', () => {
 
     // Block the restriction of right-click
     document.addEventListener('contextmenu', function (event) {
-        if (!(!disableVideoRightClick && event.target.tagName === 'VIDEO')) {
+        if (!(
+            (!disableVideoRightClick && event.target.tagName === 'VIDEO')
+            || siteRightClickExclude.some(site => window.location.hostname.includes(site))
+        )) {
             event.stopPropagation();
         }
     }, true);
 
     // Block the restriction of copy
     document.addEventListener('copy', function (event) {
-        event.stopPropagation();
+        if (!siteCopyExclude.some(site => window.location.hostname.includes(site))) {
+            event.stopPropagation();
+        }
     }, true);
 
     // Block the restriction of select
-    const style = document.createElement('style');
-    style.innerHTML = '* { -webkit-user-select: auto !important; -moz-user-select: auto !important; -ms-user-select: auto !important; user-select: auto !important; }';
-    document.head.appendChild(style);
-
-    // Block the restriction of drag
-    /*
-    document.addEventListener('dragstart', function (event) {
-        event.stopPropagation();
-    }, true);
-    */
+    if (!siteSelectExclude.some(site => window.location.hostname.includes(site))) {
+        const style = document.createElement('style');
+        style.innerHTML = '* { -webkit-user-select: auto !important; -moz-user-select: auto !important; -ms-user-select: auto !important; user-select: auto !important; }';
+        document.head.appendChild(style);
+    }
 
     // Block the restriction of save
     document.addEventListener('contextmenu', function (event) {
-        if (['IMG', 'VIDEO', 'AUDIO'].includes(event.target.nodeName)) {
+        if (
+            ['IMG', 'VIDEO', 'AUDIO'].includes(event.target.nodeName)
+            && (!siteSaveExclude.some(site => window.location.hostname.includes(site)))
+        ) {
             event.preventDefault();
         }
     });
