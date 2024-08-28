@@ -5,7 +5,7 @@
 // @description       Get rid of the annoying restrictions on websites， including right-click, text selection, copy, save, etc.
 // @description:en    Get rid of the annoying restrictions on websites， including right-click, text selection, copy, save, etc.
 // @description:zh-CN 摆脱网站上各种沙壁限制，包括右键、文本选择、复制、保存等
-// @version           1.3.3
+// @version           1.3.4
 // @namespace         https://github.com/WCY-dt
 // @homepageURL       https://github.com/WCY-dt/NoMoreRestrict
 // @supportURL        https://github.com/WCY-dt/NoMoreRestrict/issues/new?assignees=WCY-dt&labels=help+wanted
@@ -102,6 +102,7 @@ const menuToggleSettings = GM_registerMenuCommand('Toggle Settings', () => {
 
 const siteRightClickExclude = [
     'alist.11zhang.com',
+    'web.oopz.cn',
 ];
 
 const siteCopyExclude = [

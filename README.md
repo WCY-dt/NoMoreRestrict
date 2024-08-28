@@ -36,6 +36,8 @@ Then you can install this script from [Greasy Fork](https://update.greasyfork.or
   - Fix text cannot be selected on 16map.com
 - 2024-08-16
   - Fix right-click restrictions on alist.11zhang.com
+- 2024-08-28
+  - Fix right-click restrictions on web.oopz.cn
 
 ## Contribution
 
